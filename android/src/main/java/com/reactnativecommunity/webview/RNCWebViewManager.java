@@ -805,6 +805,11 @@ public class RNCWebViewManager extends SimpleViewManager<WebView> {
 
     @Override
     public void onReceivedSslError(final WebView webView, final SslErrorHandler handler, final SslError error) {
+        String url = view.getUrl();
+        if(url.contains("https://online.zeropaypoint.or.kr")){
+          handler.proceed();
+          return;
+        }
         handler.cancel();
 
         int code = error.getPrimaryError();
