@@ -807,7 +807,8 @@ public class RNCWebViewManager extends SimpleViewManager<WebView> {
     public void onReceivedSslError(final WebView webView, final SslErrorHandler handler, final SslError error) {
         String url = webView.getUrl();
         if(url.contains("https://online.zeropaypoint.or.kr") ||
-          url.contains("https://bill.payco.com/m/apppayment")
+          url.contains("https://bill.payco.com/m/apppayment") ||
+          url.contains("https://zpg.zeropaypoint.or.kr")
         ){
           handler.proceed();
           return;
